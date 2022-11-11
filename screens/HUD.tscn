@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://screens/HUD.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/arcade_classic_text.tres" type="DynamicFont" id=3]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_bottom = 84.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 30
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 40.0
+margin_top = 30.0
+margin_right = 700.0
+margin_bottom = 1260.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 660.0
+margin_bottom = 51.0
+custom_constants/separation = 40
+
+[node name="score" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 0.435294, 0.427451, 0.466667, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="highscore" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 75.0
+margin_right = 215.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 0.435294, 0.427451, 0.466667, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "HI:0"
+align = 1
+valign = 1
